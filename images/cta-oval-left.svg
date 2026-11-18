@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 310" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="arc-mint" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#b3e7c1"/>
+      <stop offset="1" stop-color="#d5f7d5"/>
+    </linearGradient>
+    <linearGradient id="arc-sage" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#6fa68e"/>
+      <stop offset="1" stop-color="#9bc9a9"/>
+    </linearGradient>
+    <linearGradient id="arc-teal" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#2b7465"/>
+      <stop offset="1" stop-color="#4a907c"/>
+    </linearGradient>
+    <linearGradient id="arc-deep" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#0b5148"/>
+      <stop offset="1" stop-color="#1d6659"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#arc-mint)" d="M0 0h80C220 0 340 60 340 155s-120 155-260 155H0z"/>
+  <path fill="url(#arc-sage)" d="M0 0h58C176 0 275 60 275 155S176 310 58 310H0z"/>
+  <path fill="url(#arc-teal)" d="M0 0h34C128 0 210 60 210 155S128 310 34 310H0z"/>
+  <path fill="url(#arc-deep)" d="M0 0h12C89 0 150 60 150 155S89 310 12 310H0z"/>
+</svg>
