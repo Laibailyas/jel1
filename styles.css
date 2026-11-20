@@ -1937,22 +1937,80 @@ body.blog-page .blog-end-cta h2{color:#4d4d4d}
   box-shadow:0 18px 38px rgba(21,87,77,.12);
 }
 
-/* Match community text-card height to the adjacent 4:5 images; keep copy anchored at opposite ends. */
+/* Pin community review titles at the top and descriptions to the bottom edge. */
 #community .expert-copy-card{
-  height:auto;
+  display:grid!important;
+  height:auto!important;
   min-height:0!important;
-  aspect-ratio:4/5;
-  justify-content:flex-start!important;
+  aspect-ratio:4/5!important;
+  grid-template-rows:auto auto minmax(0,1fr);
+  align-content:stretch;
   align-items:stretch!important;
+  justify-content:stretch!important;
+  box-sizing:border-box;
 }
-#community .expert-copy-card .community-review-stars{margin:0 0 clamp(14px,1.7vw,24px)!important}
-#community .expert-copy-card h3{margin:0!important}
+#community .expert-copy-card .community-review-stars{
+  margin:0 0 clamp(14px,1.7vw,24px)!important;
+}
+#community .expert-copy-card h3{
+  margin:0!important;
+  max-width:15ch;
+}
 #community .expert-copy-card p{
-  align-self:stretch;
-  margin:auto 0 0!important;
-  padding-top:0!important;
+  align-self:end;
+  margin:0!important;
+  padding-top:clamp(24px,3.2vw,42px)!important;
   max-width:29ch;
 }
 @media(max-width:680px){
   .research-chart-image{max-height:540px}
+}
+
+/* A few editorial category cards break up the audience photo columns. */
+#audience .audience-copy-tile{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  gap:clamp(14px,1.7vw,24px);
+  padding:clamp(20px,2.2vw,34px);
+  color:#15574d;
+  background:#eaf4ec;
+}
+#audience .audience-copy-tile--ivory{background:#f2f1e9}
+#audience .audience-copy-tile--forest{color:#d5f7d5;background:#15574d}
+#audience .audience-card-top{display:flex;flex-direction:column;gap:clamp(10px,1.25vw,18px)}
+#audience .audience-card-eyebrow{
+  margin:0;
+  color:inherit;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.09em;
+  line-height:1.25;
+  text-transform:uppercase;
+  opacity:.72;
+}
+#audience .audience-copy-tile h3{
+  max-width:12ch;
+  margin:0;
+  color:inherit;
+  font-family:var(--serif);
+  font-size:clamp(23px,2vw,32px);
+  font-weight:400;
+  line-height:1.08;
+  letter-spacing:-.025em;
+}
+#audience .audience-card-description{
+  max-width:27ch;
+  margin:auto 0 0;
+  color:inherit;
+  font-size:clamp(14px,1.08vw,16px);
+  line-height:1.5;
+  opacity:.88;
+}
+@media(max-width:680px){
+  #audience .audience-copy-tile{gap:8px;padding:10px}
+  #audience .audience-card-top{gap:7px}
+  #audience .audience-card-eyebrow{font-size:8px;letter-spacing:.055em}
+  #audience .audience-copy-tile h3{font-size:clamp(16px,4vw,19px);line-height:1.08}
+  #audience .audience-card-description{font-size:12px;line-height:1.35}
 }
