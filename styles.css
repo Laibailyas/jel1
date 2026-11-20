@@ -892,7 +892,7 @@
   .audience-tile{height:clamp(170px,46vw,260px);border-radius:2px}
   .audience-tile:nth-child(3n+2){height:clamp(150px,40vw,230px)}
   .audience-tile:nth-child(3n){height:clamp(185px,50vw,280px)}
-  .audience-tile:nth-child(n+4){display:none}
+  .audience-tile:nth-child(n+5){display:none}
   .expert-insights.section-pad{padding-block:56px 62px;padding-inline:16px}
   .expert-heading{align-items:flex-end;margin-bottom:24px}
   .expert-heading .eyebrow{font-size:10px}
