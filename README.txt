@@ -1,5 +1,5 @@
-JEL1 landing page source update — 20 Nov 2026
+JEL1 static landing page source
 
-This code bundle contains the complete landing-page and journal HTML/CSS/JS. It intentionally omits the existing images folder. Apply the matching image overlay from JEL1-LP-Asset-Updates-Nov20.zip into the existing JEL1-HTML-CSS-JS/images folder.
+This folder is a complete deployable static site. It includes the landing page, journal pages, HTML, CSS, JavaScript, fonts, and images. Upload this folder's contents to the website root or deploy the folder as the site.
 
-Journal order: Gut Check: Fiber Edition; How to Break the Hunger Loop; Konjac Jelly 101; Chew Your Collagen; Jelly, But Make It Functional.
+Review-strip bylines are demo names. Replace them with approved real reviewer names before publishing.

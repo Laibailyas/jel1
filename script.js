@@ -537,3 +537,41 @@ if (protocolRing) {
   if (document.fonts?.ready) document.fonts.ready.then(startProtocolRing);
   else startProtocolRing();
 }
+
+// Animate the outcome bars when they enter view and reveal the page return control.
+const outcomesChart = document.querySelector(".research-chart-visual");
+if (outcomesChart) {
+  if (reducedMotion.matches) {
+    outcomesChart.classList.add("is-visible");
+  } else if ("IntersectionObserver" in window) {
+    outcomesChart.classList.add("is-animated");
+    const outcomesObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          outcomesChart.classList.add("is-visible");
+          outcomesObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.25 });
+    outcomesObserver.observe(outcomesChart);
+  } else {
+    outcomesChart.classList.add("is-visible");
+  }
+}
+
+const backToTop = document.querySelector("#back-to-top");
+if (backToTop) {
+  let backToTopFrame = 0;
+  const updateBackToTop = () => {
+    if (backToTopFrame) return;
+    backToTopFrame = window.requestAnimationFrame(() => {
+      backToTopFrame = 0;
+      backToTop.classList.toggle("is-visible", window.scrollY > 520);
+      const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = scrollableHeight > 0 ? Math.min(1, Math.max(0, window.scrollY / scrollableHeight)) : 0;
+      backToTop.style.setProperty("--scroll-progress", `${progress * 360}deg`);
+    });
+  };
+  window.addEventListener("scroll", updateBackToTop, { passive: true });
+  updateBackToTop();
+}

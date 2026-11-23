@@ -2014,3 +2014,283 @@ body.blog-page .blog-end-cta h2{color:#4d4d4d}
   #audience .audience-copy-tile h3{font-size:clamp(16px,4vw,19px);line-height:1.08}
   #audience .audience-card-description{font-size:12px;line-height:1.35}
 }
+
+/* Reviews ticker: a quiet, clickable review link paired with moving editorial copy. */
+.brand-marquee.review-marquee{
+  display:grid;
+  grid-template-columns:max-content minmax(0,1fr);
+  align-items:center;
+  gap:clamp(18px,3vw,46px);
+  padding:13px var(--page-gutter,clamp(24px,4vw,68px));
+  border-block:1px solid rgba(21,87,77,.12);
+  background:#f8faff;
+  color:#183a32;
+}
+.review-marquee-static{display:flex;min-width:230px;align-items:center;gap:12px;color:#183a32;text-decoration:none!important}
+.review-marquee-mark{display:grid;width:34px;height:34px;flex:none;place-items:center;border:1px solid rgba(21,87,77,.28);border-radius:50%;color:#15574d;font-family:var(--serif);font-size:25px;line-height:1}
+.review-marquee-label{display:flex;flex-direction:column;gap:2px}
+.review-marquee-label strong{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.review-marquee-label small{color:#64776e;font-size:11px;letter-spacing:.02em}
+.review-marquee-static svg{width:18px;height:18px;margin-left:auto;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s ease}
+.review-marquee-static:hover svg{transform:translateX(4px)}
+.review-marquee-window{min-width:0;overflow:hidden}
+.review-marquee .review-marquee-track{display:flex;width:max-content;animation:review-marquee-scroll 34s linear infinite;will-change:transform}
+.review-marquee-group{display:flex;flex:none;align-items:center;gap:clamp(16px,2.1vw,32px);padding:6px clamp(16px,2.1vw,32px)}
+.review-marquee-group span{color:#52675e;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+.review-marquee-group i{color:#70a998;font-size:13px;font-style:normal;line-height:1}
+.review-marquee:hover .review-marquee-track,.review-marquee:focus-within .review-marquee-track{animation-play-state:paused}
+@keyframes review-marquee-scroll{to{transform:translateX(-50%)}}
+
+/* Research highlight: paired outcome bars on the requested pale-blue canvas. */
+#research.research.section-pad{padding-block:clamp(34px,5vw,72px);background:#f8faff}
+#research .research-panel{overflow:visible;border-radius:24px;background:#f8faff;color:#173a32;box-shadow:none}
+#research .research-feature{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(22px,4vw,60px);align-items:center;padding:clamp(22px,3.4vw,50px)}
+#research .research-copy{max-width:560px}
+#research .research-copy h2{max-width:11ch;margin:0 0 24px;color:#173a32;font-size:clamp(38px,4vw,60px);line-height:1.08}
+#research .research-copy h2 span{display:block}
+#research .research-lead{max-width:45ch;color:#52675e;font-size:clamp(15px,1.15vw,18px);line-height:1.6}
+#research .research-link{margin-top:25px;border-color:rgba(21,87,77,.42);color:#15574d}
+#research .research-chart-visual{display:block;min-height:0!important;margin:0;padding:12px 14px!important;overflow:hidden!important;border:1px solid rgba(21,87,77,.1)!important;border-radius:20px;background:#fff!important;box-shadow:0 20px 48px rgba(34,68,66,.09)!important}
+#research .research-outcomes-chart{display:block;width:100%;height:auto;overflow:visible;font-family:var(--sans)}
+#research .chart-title{fill:#283f39;font-size:22px;font-weight:600;letter-spacing:-.3px}
+#research .chart-subtitle{fill:#81928b;font-size:11px;font-weight:600;letter-spacing:1.4px}
+#research .chart-legend text{fill:#687b73;font-size:11px;font-weight:500}
+#research .legend-konjac{fill:#176357}
+#research .legend-placebo{fill:#c8c7bd}
+#research .chart-axis-label{fill:#82918a;font-size:10px;letter-spacing:.3px}
+#research .chart-gridlines line{stroke:#e8eeeb;stroke-width:1}
+#research .chart-gridlines text{fill:#93a099;font-size:10px;text-anchor:end}
+#research .research-bar{transform-box:fill-box;transform-origin:center bottom}
+#research .konjac-bar{fill:#176357}
+#research .placebo-bar{fill:#c8c7bd}
+#research .chart-value{font-size:12px;font-weight:600;text-anchor:middle}
+#research .chart-value-konjac{fill:#176357}
+#research .chart-value-placebo{fill:#8a8b82}
+#research .chart-category-labels text{fill:#52675e;font-size:11px;font-weight:600;text-anchor:middle}
+#research .chart-category-labels tspan:last-child{fill:#8b9892;font-size:10px;font-weight:500;letter-spacing:.2px}
+#research .chart-footnote{fill:#81928b;font-size:10px;font-weight:500;letter-spacing:.15px}
+#research .research-chart-visual.is-animated .research-bar{transform:scaleY(.02);transition:transform .85s cubic-bezier(.2,.75,.25,1)}
+#research .research-chart-visual.is-visible .research-bar{transform:scaleY(1)}
+#research .research-chart-visual.is-visible .research-bar:nth-of-type(2n){transition-delay:.08s}
+
+/* Keep all three audience cards, while using a shorter single-flow layout on phones. */
+.audience-mobile-cards{display:none}
+#routine .ingredient-fibre.is-open .ingredient-reveal-surface,
+#routine .ingredient-fibre.is-open .ingredient-reveal-surface::before{background:#339a8a!important}
+#routine .ingredient-fibre.is-open .ingredient-wave-back{background:#8bcdbf!important}
+#routine .ingredient-fibre.is-open .ingredient-wave-middle{background:#58b6a4!important}
+#routine .ingredient-fibre.is-open .ingredient-wave-front{background:#339a8a!important}
+
+/* Floating return control appears after the reader moves down the page. */
+.back-to-top{position:fixed;right:clamp(16px,2.2vw,30px);bottom:clamp(16px,2.2vw,30px);z-index:20;display:flex;min-height:48px;align-items:center;gap:10px;padding:0 16px;border:1px solid rgba(21,87,77,.17);border-radius:999px;background:rgba(248,250,255,.94);color:#174b41;font-size:12px;font-weight:600;letter-spacing:.04em;box-shadow:0 8px 24px rgba(26,63,53,.13);opacity:0;pointer-events:none;transform:translateY(10px);transition:opacity .22s ease,transform .22s ease}
+.back-to-top.is-visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+.back-to-top svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.back-to-top:focus-visible{outline:3px solid rgba(51,154,138,.45);outline-offset:3px}
+
+@media(max-width:900px){
+  #research .research-feature{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:20px;padding:24px}
+  #research .research-copy h2{font-size:clamp(34px,5vw,48px)}
+}
+@media(max-width:680px){
+  .brand-marquee.review-marquee{grid-template-columns:1fr;gap:7px;padding:10px 18px}
+  .review-marquee-static{min-width:0;width:100%;gap:9px}
+  .review-marquee-mark{width:28px;height:28px;font-size:21px}
+  .review-marquee-label strong{font-size:10px}
+  .review-marquee-label small{font-size:9px}
+  .review-marquee .review-marquee-track{width:max-content;animation-duration:28s;justify-content:flex-start}
+  .review-marquee-group{gap:15px;padding:4px 14px}
+  .review-marquee-group span{font-size:9px;letter-spacing:.07em}
+
+  #research.research.section-pad{padding:26px 18px}
+  #research .research-panel{border-radius:18px}
+  #research .research-feature{grid-template-columns:1fr;gap:20px;padding:20px 16px}
+  #research .research-copy h2{max-width:13ch;margin-bottom:14px;font-size:34px}
+  #research .research-lead{font-size:13px}
+  #research .research-link{margin-top:17px;font-size:10px}
+  #research .research-chart-visual{padding:8px!important;overflow-x:auto!important;overscroll-behavior-inline:contain;scrollbar-width:thin}
+  #research .research-outcomes-chart{width:600px;max-width:none}
+
+  #routine.protocol-section.section-pad{padding-block:36px;padding-inline:18px}
+  #routine .protocol-panel{display:flex;min-height:0;flex-direction:column;overflow:hidden;border-radius:18px;background:#303430}
+  #routine .protocol-product-panel{min-height:clamp(245px,66vw,310px);max-height:310px}
+  #routine .protocol-ring{height:90%;max-height:290px;max-width:86%}
+  #routine .protocol-pouch{height:78%;max-height:265px;max-width:70%}
+  #routine .protocol-copy{display:flex;min-height:0!important;flex-direction:column;justify-content:flex-start;gap:15px;padding:23px 17px 20px;background:#303430}
+  #routine .protocol-copy h2{max-width:13ch;margin:0;font-size:clamp(31px,8vw,40px);line-height:1.04}
+  #routine .protocol-ingredient-grid{position:relative!important;inset:auto!important;display:grid!important;width:100%;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;overflow:visible;margin:0}
+  #routine .protocol-ingredient-card,
+  #routine .protocol-ingredient-card.ingredient-fibre,
+  #routine .protocol-ingredient-card.ingredient-micro,
+  #routine .protocol-ingredient-card.ingredient-peptides{position:relative!important;inset:auto!important;width:100%!important;height:170px;min-height:0!important;aspect-ratio:auto;transform:none;margin:0;border-radius:13px}
+  #routine .protocol-ingredient-card.ingredient-peptides{grid-column:1/-1;height:148px}
+  #routine .protocol-ingredient-card>img{width:100%;height:100%;border-radius:13px;object-fit:cover}
+  #routine .ingredient-reveal{border-radius:13px}
+  #routine .ingredient-reveal-copy{padding:14px}
+  #routine .ingredient-reveal-copy h3{font-size:17px}
+  #routine .ingredient-reveal-detail{max-width:20ch;gap:6px;padding-right:34px}
+  #routine .ingredient-reveal-stat{font-size:11px}
+  #routine .ingredient-reveal-description{max-width:24ch;font-size:10px;line-height:1.3}
+  #routine .ingredient-reveal-toggle{right:9px;bottom:9px;width:25px}
+  #routine .protocol-copy>p{width:100%;max-width:42ch;margin:0;font-size:13px;line-height:1.45}
+
+  #audience.section-pad{min-height:0;padding:46px 18px 52px;overflow:hidden}
+  #audience .audience-stage{display:flex;height:auto;min-height:0;flex-direction:column;gap:20px;overflow:visible;padding:0}
+  #audience .audience-copy{display:flex;justify-content:flex-start;gap:12px;padding:0}
+  #audience .audience-copy h2{max-width:none;font-size:36px;line-height:1.04}
+  #audience .audience-copy>p{max-width:42ch;font-size:14px;line-height:1.45}
+  #audience .audience-gallery{display:none!important}
+  #audience .audience-mobile-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+  #audience .audience-mobile-card{display:flex;min-width:0;min-height:196px;flex-direction:column;justify-content:space-between;gap:9px;padding:14px 12px;border-radius:12px;background:#eaf4ec;color:#15574d}
+  #audience .audience-mobile-card--ivory{background:#f2f1e9}
+  #audience .audience-mobile-card--forest{grid-column:1/-1;min-height:148px;background:#15574d;color:#eaf4ec}
+  #audience .audience-mobile-card .audience-card-eyebrow{margin:0;font-size:8px;letter-spacing:.08em;line-height:1.2}
+  #audience .audience-mobile-card h3{max-width:16ch;margin:0;font-family:var(--serif);font-size:clamp(18px,5vw,22px);font-weight:400;line-height:1.05;letter-spacing:-.02em}
+  #audience .audience-mobile-card>p:last-child{margin:auto 0 0;font-size:11px;line-height:1.35;opacity:.88}
+  #audience .audience-mobile-card--forest h3{max-width:23ch}
+  #audience .audience-mobile-card--forest>p:last-child{max-width:62ch}
+
+  .back-to-top{right:14px;bottom:14px;min-height:42px;padding-inline:13px;font-size:10px}
+}
+@media(prefers-reduced-motion:reduce){
+  .review-marquee .review-marquee-track{animation:none!important}
+  #research .research-chart-visual.is-animated .research-bar{transform:scaleY(1);transition:none}
+  .back-to-top{transition:none}
+}
+
+/* Final reference pass: real review copy, readable audience cards, and inset study panel. */
+.brand-marquee.review-marquee{
+  grid-template-columns:max-content minmax(0,1fr);
+  gap:clamp(18px,2.6vw,38px);
+  min-height:72px;
+  padding:13px clamp(22px,4vw,60px);
+  border-block:1px solid rgba(21,87,77,.12);
+  background:#fff;
+  color:#173a32;
+}
+.review-marquee-static{min-width:245px;gap:12px;color:#173a32}
+.review-marquee-stars{flex:none;color:#15574d;font-size:13px;letter-spacing:2px;white-space:nowrap}
+.review-marquee-mark{display:none}
+.review-marquee-label strong{font-size:11px;letter-spacing:.08em}
+.review-marquee-label small{font-size:10px}
+.review-marquee-static svg{width:16px;height:16px}
+.review-marquee-group{gap:clamp(17px,2.2vw,32px);padding:5px clamp(14px,1.8vw,26px)}
+.review-marquee-group span{color:#425d54;font-size:12px;font-weight:500;letter-spacing:.025em;text-transform:none}
+.review-marquee-group>span{display:inline-flex;align-items:center;gap:7px}
+.review-marquee-author{color:#81928b;font-size:9px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;white-space:nowrap}
+.review-marquee-author::before{margin-right:7px;color:#70a998;content:"·"}
+.review-marquee-group i{font-size:12px}
+
+#audience .audience-copy-tile{
+  height:clamp(286px,35svh,360px)!important;
+  min-height:286px;
+  gap:20px;
+  padding:clamp(20px,2vw,30px);
+}
+#audience .audience-card-top{gap:12px}
+#audience .audience-card-eyebrow{font-size:clamp(9px,.72vw,11px);letter-spacing:.11em}
+#audience .audience-copy-tile h3{max-width:16ch;font-size:clamp(22px,1.9vw,29px);line-height:1.12}
+#audience .audience-card-description{max-width:none;margin-top:auto;font-size:clamp(13px,.95vw,15px);line-height:1.48}
+#audience .audience-copy h2{color:#15574d}
+
+#research.research.section-pad{
+  padding:clamp(18px,2.2vw,32px) clamp(20px,4vw,72px) clamp(42px,4.2vw,64px);
+  background:#fff;
+}
+#research .research-panel{
+  width:100%;
+  max-width:1540px;
+  margin-inline:auto;
+  overflow:hidden;
+  border:1px solid rgba(23,58,50,.09);
+  border-radius:28px;
+  background:#f8faff;
+  box-shadow:0 16px 44px rgba(24,58,52,.08);
+}
+#research .research-feature{padding:clamp(28px,3.4vw,52px)}
+#research .research-chart-visual{border-radius:18px!important}
+
+.back-to-top{
+  --scroll-progress:0deg;
+  display:grid;
+  width:48px;
+  height:48px;
+  min-height:0;
+  place-items:center;
+  padding:0;
+  border:2px solid transparent;
+  border-radius:50%;
+  background:linear-gradient(#fff,#fff) padding-box,conic-gradient(from -90deg,#339a8a 0deg var(--scroll-progress),rgba(21,87,77,.18) var(--scroll-progress) 360deg) border-box;
+  color:#15574d;
+  box-shadow:0 7px 22px rgba(26,63,53,.16);
+}
+.back-to-top svg{width:19px;height:19px}
+.back-to-top:hover{transform:translateY(-2px)}
+
+@media(max-width:760px){
+  #contact.contact-cta.section-pad{padding-inline:16px}
+  #contact .contact-card{width:100%;min-height:0;justify-content:center;padding:30px 22px;border-radius:20px}
+  #contact .cta-oval-art{display:none!important}
+  #contact .contact-content{width:100%;max-width:620px;margin:0 auto;padding:0!important;text-align:center}
+  #contact .contact-copy{display:flex;flex-direction:column;align-items:center;margin:0 auto;padding:0;text-align:center}
+  #contact .contact-copy .eyebrow{margin:0 0 10px}
+  #contact .contact-card h2{max-width:none;margin:0 0 9px;font-size:clamp(30px,7vw,38px)}
+  #contact .contact-copy>p:last-child{max-width:36ch;margin-inline:auto;font-size:14px;line-height:1.5}
+  #contact .waitlist-form{width:100%;max-width:480px;margin:22px auto 0}
+  #contact .waitlist-input-wrap{justify-content:center}
+}
+
+@media(max-width:680px){
+  .brand-marquee.review-marquee{grid-template-columns:1fr;gap:7px;padding:10px 18px}
+  .review-marquee-static{min-width:0;width:100%;gap:10px}
+  .review-marquee-stars{font-size:12px}
+  .review-marquee-label strong{font-size:10px}
+  .review-marquee-label small{font-size:9px}
+  .review-marquee-group{gap:15px;padding:5px 14px}
+  .review-marquee-group span{font-size:10px}
+  .review-marquee-author{font-size:8px}
+
+  #routine.protocol-section.section-pad{padding:36px 18px;background:#fff}
+  #routine .protocol-panel{border:1px solid rgba(21,87,77,.1);border-radius:18px;background:#fff!important;box-shadow:0 10px 32px rgba(27,65,55,.06)}
+  #routine .protocol-product-panel{background:#15574d!important}
+  #routine .protocol-ring text{fill:#d5f7d5}
+  #routine .protocol-copy{background:#fff!important;color:#173a32}
+  #routine .protocol-copy h2{color:#15574d}
+  #routine .protocol-copy>p{color:#59675e}
+
+  #audience .audience-mobile-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin-top:22px}
+  #audience .audience-mobile-card{
+    grid-column:auto;
+    min-height:242px;
+    justify-content:flex-start;
+    gap:12px;
+    padding:16px 13px;
+    border-radius:14px;
+  }
+  #audience .audience-mobile-card--forest{grid-column:1/-1;min-height:185px;padding:18px 19px}
+  #audience .audience-mobile-card .audience-card-eyebrow{font-size:9px;letter-spacing:.1em}
+  #audience .audience-mobile-card h3{max-width:none;font-size:clamp(18px,4.8vw,21px);line-height:1.1}
+  #audience .audience-mobile-card>p:last-child{max-width:none;margin:auto 0 0;font-size:12px;line-height:1.42}
+  #audience .audience-mobile-card--forest h3{font-size:23px}
+  #audience .audience-mobile-card--forest>p:last-child{font-size:13px;line-height:1.48}
+
+  #contact .waitlist-input-wrap button{background-position:right center;color:#111}
+  #contact .waitlist-input-wrap button:hover,
+  #contact .waitlist-input-wrap button:focus-visible{background-position:left center;color:#222}
+
+  #research.research.section-pad{padding:16px 16px 30px}
+  #research .research-panel{border-radius:19px}
+  #research .research-feature{padding:22px 17px}
+  .back-to-top{right:14px;bottom:14px;width:44px;height:44px}
+}
+
+/* Keep all three ingredient reveals in the same fresh green family. */
+#routine .ingredient-micro.is-open .ingredient-reveal-surface,
+#routine .ingredient-peptides.is-open .ingredient-reveal-surface,
+#routine .ingredient-micro.is-open .ingredient-reveal-surface::before,
+#routine .ingredient-peptides.is-open .ingredient-reveal-surface::before{background:#339a8a!important}
+#routine .ingredient-micro.is-open .ingredient-wave-back,
+#routine .ingredient-peptides.is-open .ingredient-wave-back{background:#8bcdbf!important}
+#routine .ingredient-micro.is-open .ingredient-wave-middle,
+#routine .ingredient-peptides.is-open .ingredient-wave-middle{background:#58b6a4!important}
+#routine .ingredient-micro.is-open .ingredient-wave-front,
+#routine .ingredient-peptides.is-open .ingredient-wave-front{background:#339a8a!important}
