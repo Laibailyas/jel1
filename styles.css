@@ -2026,6 +2026,11 @@ body.blog-page .blog-end-cta h2{color:#4d4d4d}
   background:#f8faff;
   color:#183a32;
 }
+
+
+.brand-marquee.review-marquee{
+  border: none !important;
+}
 .review-marquee-static{display:flex;min-width:230px;align-items:center;gap:12px;color:#183a32;text-decoration:none!important}
 .review-marquee-mark{display:grid;width:34px;height:34px;flex:none;place-items:center;border:1px solid rgba(21,87,77,.28);border-radius:50%;color:#15574d;font-family:var(--serif);font-size:25px;line-height:1}
 .review-marquee-label{display:flex;flex-direction:column;gap:2px}
