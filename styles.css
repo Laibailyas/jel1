@@ -2191,9 +2191,11 @@ body.blog-page .blog-end-cta h2{color:#4d4d4d}
 #audience .audience-copy-tile h3{max-width:16ch;font-size:clamp(22px,1.9vw,29px);line-height:1.12}
 #audience .audience-card-description{max-width:none;margin-top:auto;font-size:clamp(13px,.95vw,15px);line-height:1.48}
 #audience .audience-copy h2{color:#15574d}
+.brand-marquee.review-marquee{background:#f8faff}
+#community.expert-insights.section-pad{padding-bottom:0}
 
 #research.research.section-pad{
-  padding:clamp(18px,2.2vw,32px) clamp(20px,4vw,72px) clamp(42px,4.2vw,64px);
+  padding:0 clamp(20px,4vw,72px) clamp(42px,4.2vw,64px);
   background:#fff;
 }
 #research .research-panel{
@@ -2277,7 +2279,7 @@ body.blog-page .blog-end-cta h2{color:#4d4d4d}
   #contact .waitlist-input-wrap button:hover,
   #contact .waitlist-input-wrap button:focus-visible{background-position:left center;color:#222}
 
-  #research.research.section-pad{padding:16px 16px 30px}
+  #research.research.section-pad{padding:0 16px 30px}
   #research .research-panel{border-radius:19px}
   #research .research-feature{padding:22px 17px}
   .back-to-top{right:14px;bottom:14px;width:44px;height:44px}
@@ -2294,3 +2296,32 @@ body.blog-page .blog-end-cta h2{color:#4d4d4d}
 #routine .ingredient-peptides.is-open .ingredient-wave-middle{background:#58b6a4!important}
 #routine .ingredient-micro.is-open .ingredient-wave-front,
 #routine .ingredient-peptides.is-open .ingredient-wave-front{background:#339a8a!important}
+
+
+/* Center-to-center comparison brackets draw onto the chart as it enters view. */
+#research .chart-comparison-bracket,
+#research .chart-comparison-head{fill:none;stroke:#96C5A6;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;opacity:0;vector-effect:non-scaling-stroke}
+#research .research-chart-visual.is-visible .chart-comparison-bracket{animation:draw-chart-comparison .8s cubic-bezier(.2,.72,.22,1) var(--arrow-delay,0s) forwards}
+#research .research-chart-visual.is-visible .chart-comparison-head{animation:draw-chart-comparison .22s ease calc(var(--arrow-delay,0s) + .64s) forwards}
+#research .chart-comparison-group.arrow-one{--arrow-delay:.1s}
+#research .chart-comparison-group.arrow-two{--arrow-delay:.26s}
+#research .chart-comparison-group.arrow-three{--arrow-delay:.42s}
+#research .chart-comparison-group.arrow-four{--arrow-delay:.58s}
+#research .chart-value-mask{fill:#fff}
+@keyframes draw-chart-comparison{to{stroke-dashoffset:0;opacity:.92}}
+@media(prefers-reduced-motion:reduce){
+  #research .chart-comparison-bracket,
+  #research .chart-comparison-head{stroke-dashoffset:0;opacity:.92;animation:none!important}
+}
+
+/* Ingredient reveals use the light sage and deep green from the audience card reference. */
+#routine .ingredient-fibre.is-open .ingredient-reveal-surface,
+#routine .ingredient-micro.is-open .ingredient-reveal-surface,
+#routine .ingredient-peptides.is-open .ingredient-reveal-surface,
+#routine .ingredient-fibre.is-open .ingredient-reveal-surface::before,
+#routine .ingredient-micro.is-open .ingredient-reveal-surface::before,
+#routine .ingredient-peptides.is-open .ingredient-reveal-surface::before{background:#eaf4ec!important}
+#routine .ingredient-reveal-copy{color:#15574d}
+#routine .ingredient-reveal-copy h3{color:#15574d!important}
+#routine .ingredient-reveal-stat{color:#15574d!important}
+#routine .ingredient-reveal-copy p.ingredient-reveal-description{color:#15574d!important}
