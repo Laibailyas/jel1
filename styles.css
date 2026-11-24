@@ -141,7 +141,6 @@
   .flavour-next{right:7px;transform:none}
   .flavour-next:hover{transform:translateY(-1px)}
 }
-@media(hover:none){.flavour-image .flavour-hover,.flavour-image::after,.flavour-hover-copy{display:none}}
 .collection-heading>div{text-align:left}
 .flavour-slider-arrow{top:40%}
 
@@ -2375,10 +2374,17 @@ body.blog-page .blog-end-cta h2{color:#4d4d4d}
   box-shadow:none!important;
 }
 
-/* Keep product images visible after a tap on touch screens. */
+/* Let touch users toggle the same flavour photo preview with a tap. */
 @media(hover:none){
   #collection .flavour-image .flavour-main,
   #collection .flavour-image:focus-visible .flavour-main{opacity:1!important;transform:none!important}
+  #collection .flavour-image .flavour-hover{display:block;opacity:0;transform:none}
+  #collection .flavour-image::after{display:block;opacity:0}
+  #collection .flavour-hover-copy{display:flex;opacity:0;transform:translateY(8px)}
+  #collection .flavour-image.is-touch-hover .flavour-main{opacity:0!important;transform:scale(1.02)!important}
+  #collection .flavour-image.is-touch-hover .flavour-hover{opacity:1!important;transform:scale(1.025)!important}
+  #collection .flavour-image.is-touch-hover::after{opacity:1!important}
+  #collection .flavour-image.is-touch-hover .flavour-hover-copy{opacity:1!important;transform:translateY(0)!important}
 }
 
 /* Keep Smart Food copy to three lines in the compact card layouts. */

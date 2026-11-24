@@ -113,6 +113,8 @@ const flavourTrack = document.querySelector("#flavour-track");
 if (flavourTrack) {
   const previous = document.querySelector("#flavour-prev");
   const next = document.querySelector("#flavour-next");
+  const flavourImages = Array.from(flavourTrack.querySelectorAll(".flavour-image"));
+  const touchPreview = window.matchMedia("(hover: none)");
   const updateFlavourArrows = () => {
     previous.hidden = flavourTrack.scrollLeft <= 2;
     next.hidden = flavourTrack.scrollLeft + flavourTrack.clientWidth >= flavourTrack.scrollWidth - 3;
@@ -124,6 +126,21 @@ if (flavourTrack) {
   };
   previous.addEventListener("click", () => scrollFlavours(-1));
   next.addEventListener("click", () => scrollFlavours(1));
+  if (touchPreview.matches) {
+    flavourImages.forEach((image) => {
+      image.setAttribute("aria-expanded", "false");
+      image.addEventListener("click", (event) => {
+        // First tap previews the alternate photo; a second tap follows the existing link.
+        if (image.classList.contains("is-touch-hover")) return;
+        event.preventDefault();
+        flavourImages.forEach((otherImage) => {
+          const isActive = otherImage === image;
+          otherImage.classList.toggle("is-touch-hover", isActive);
+          otherImage.setAttribute("aria-expanded", String(isActive));
+        });
+      });
+    });
+  }
   flavourTrack.addEventListener("scroll", () => requestAnimationFrame(updateFlavourArrows), { passive: true });
   window.addEventListener("resize", updateFlavourArrows);
   updateFlavourArrows();
