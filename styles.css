@@ -2022,14 +2022,9 @@ body.blog-page .blog-end-cta h2{color:#4d4d4d}
   align-items:center;
   gap:clamp(18px,3vw,46px);
   padding:13px var(--page-gutter,clamp(24px,4vw,68px));
-  /* border-block:1px solid rgba(21,87,77,.12); */
+  border-block:1px solid rgba(21,87,77,.12);
   background:#f8faff;
   color:#183a32;
-}
-
-
-.brand-marquee.review-marquee{
-  border: none !important;
 }
 .review-marquee-static{display:flex;min-width:230px;align-items:center;gap:12px;color:#183a32;text-decoration:none!important}
 .review-marquee-mark{display:grid;width:34px;height:34px;flex:none;place-items:center;border:1px solid rgba(21,87,77,.28);border-radius:50%;color:#15574d;font-family:var(--serif);font-size:25px;line-height:1}
@@ -2330,3 +2325,36 @@ body.blog-page .blog-end-cta h2{color:#4d4d4d}
 #routine .ingredient-reveal-copy h3{color:#15574d!important}
 #routine .ingredient-reveal-stat{color:#15574d!important}
 #routine .ingredient-reveal-copy p.ingredient-reveal-description{color:#15574d!important}
+
+/* Remove the extra frames called out in the latest client review. */
+.brand-marquee.review-marquee{border:0!important;background:#f8faff}
+#research .research-panel{border:0!important;box-shadow:none!important}
+#research .research-chart-visual{
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+#research .chart-value-mask{fill:#f8faff}
+
+#routine .protocol-ingredient-card,
+#routine .protocol-ingredient-card>img,
+#routine .protocol-ingredient-card:is(:hover,:focus-within,.is-open)>img{
+  border:0!important;
+  box-shadow:none!important;
+}
+
+/* Keep product images visible after a tap on touch screens. */
+@media(hover:none){
+  #collection .flavour-image .flavour-main,
+  #collection .flavour-image:focus-visible .flavour-main{opacity:1!important;transform:none!important}
+}
+
+/* Keep Smart Food copy to three lines in the compact card layouts. */
+#audience .audience-copy-tile--forest .audience-card-description{max-width:26ch}
+@media(max-width:680px){
+  #research .research-chart-visual{overflow-x:auto!important;overflow-y:hidden!important}
+  #routine .protocol-panel{border:0!important;box-shadow:none!important;border-radius:0!important}
+  #audience .audience-mobile-card--forest>p:last-child{max-width:27ch}
+}
