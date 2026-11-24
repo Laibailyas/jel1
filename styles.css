@@ -2339,11 +2339,24 @@ body.blog-page .blog-end-cta h2{color:#4d4d4d}
 #research .chart-value-mask{fill:#f8faff}
 
 #routine .protocol-ingredient-card,
+#routine .protocol-ingredient-card.ingredient-fibre,
+#routine .protocol-ingredient-card.ingredient-micro,
+#routine .protocol-ingredient-card.ingredient-peptides,
 #routine .protocol-ingredient-card>img,
+#routine .protocol-ingredient-card .ingredient-reveal,
+#routine .protocol-ingredient-card .ingredient-reveal-surface,
 #routine .protocol-ingredient-card:is(:hover,:focus-within,.is-open)>img{
   border:0!important;
   box-shadow:none!important;
+  filter:none!important;
 }
+#routine .protocol-ingredient-card,
+#routine .protocol-ingredient-card.ingredient-fibre,
+#routine .protocol-ingredient-card.ingredient-micro,
+#routine .protocol-ingredient-card.ingredient-peptides{border-radius:14px!important}
+#routine .protocol-ingredient-card>img,
+#routine .protocol-ingredient-card .ingredient-reveal,
+#routine .protocol-ingredient-card .ingredient-reveal-surface{border-radius:inherit!important}
 
 /* Keep product images visible after a tap on touch screens. */
 @media(hover:none){
@@ -2356,5 +2369,9 @@ body.blog-page .blog-end-cta h2{color:#4d4d4d}
 @media(max-width:680px){
   #research .research-chart-visual{overflow-x:auto!important;overflow-y:hidden!important}
   #routine .protocol-panel{border:0!important;box-shadow:none!important;border-radius:0!important}
+  #routine .protocol-ingredient-card,
+  #routine .protocol-ingredient-card.ingredient-fibre,
+  #routine .protocol-ingredient-card.ingredient-micro,
+  #routine .protocol-ingredient-card.ingredient-peptides{border-radius:13px!important}
   #audience .audience-mobile-card--forest>p:last-child{max-width:27ch}
 }
