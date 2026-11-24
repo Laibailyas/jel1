@@ -2357,6 +2357,23 @@ body.blog-page .blog-end-cta h2{color:#4d4d4d}
 #routine .protocol-ingredient-card>img,
 #routine .protocol-ingredient-card .ingredient-reveal,
 #routine .protocol-ingredient-card .ingredient-reveal-surface{border-radius:inherit!important}
+#routine .protocol-ingredient-card.is-open{
+  background:#eaf4ec!important;
+  border:0!important;
+  outline:0!important;
+  box-shadow:none!important;
+  filter:none!important;
+}
+#routine .protocol-ingredient-card.is-open .ingredient-reveal,
+#routine .protocol-ingredient-card.is-open .ingredient-reveal-surface,
+#routine .protocol-ingredient-card.is-open .ingredient-reveal-copy,
+#routine .protocol-ingredient-card.is-open .ingredient-reveal::before,
+#routine .protocol-ingredient-card.is-open .ingredient-reveal-surface::before{
+  background:#eaf4ec!important;
+  border:0!important;
+  outline:0!important;
+  box-shadow:none!important;
+}
 
 /* Keep product images visible after a tap on touch screens. */
 @media(hover:none){
